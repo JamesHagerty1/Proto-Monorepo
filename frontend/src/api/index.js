@@ -1,2 +1,2 @@
 export { apiClient } from "@/api/client";
-export { getHello } from "@/api/hello";
+export { fetchHello } from "@/api/hello";
