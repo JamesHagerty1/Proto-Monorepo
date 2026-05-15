@@ -1,6 +1,8 @@
 
 May 15, 2026
 
+> Avoiding types on frontend and backend to start, since this is for prototyping
+
 > `/frontend/src/api/` files are bundled into an `index.js`, whereas 
 `/frontend/src/composables/` files are NOT because they are likely to import
 each other and an index could lead to cyclical imports
