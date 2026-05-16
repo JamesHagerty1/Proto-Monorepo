@@ -1,4 +1,9 @@
 
+May 16, 2026
+
+> Using `Devise` for auth because it should make working towards an MVP simpler
+than using third party auth, by keeping the code more consolidated.
+
 May 15, 2026
 
 > Avoiding types on frontend and backend to start, since this is for prototyping
