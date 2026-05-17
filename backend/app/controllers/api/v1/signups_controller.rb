@@ -6,7 +6,7 @@ class Api::V1::SignupsController < ApplicationController
       email: signup_params[:email],
       password: signup_params[:password],
       password_confirmation: signup_params[:password_confirmation],
-      role: :admin,
+      role: :admin, # User who creates org should be an admin
     )
 
     ActiveRecord::Base.transaction do
@@ -28,11 +28,14 @@ class Api::V1::SignupsController < ApplicationController
                   :password_confirmation)
   end
 
+  # TODO -- find nice way to document errors spec, to make things easier for
+  # frontend development
   def signup_errors(organization, user)
     errors = {}
     errors[:email] = user.errors[:email] if user.errors[:email].any?
-    # Devise mentions errors related to :password_confirmation within :password
-    errors[:password] = user.errors[:password] if user.errors[:password].any?
+    password_errors = 
+      user.errors[:password] + user.errors[:password_confirmation]
+    errors[:password] = password_errors if password_errors.any?
     if organization.errors[:name].any?
       errors[:organization_name] = organization.errors[:name]
     end
