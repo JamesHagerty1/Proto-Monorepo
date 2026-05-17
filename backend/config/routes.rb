@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get "hello", to: "hello#index"
+      post "signup", to: "signup#create"
     end
   end
 
