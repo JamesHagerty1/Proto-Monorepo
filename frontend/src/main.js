@@ -7,13 +7,13 @@ import router from "./router";
 import "./assets/main.css";
 
 import PrimeVue from "primevue/config";
-import Aura from "@primeuix/themes/aura";
+import { AppPreset } from "./theme";
 
 const app = createApp(App);
 
 app.use(PrimeVue, {
   theme: {
-    preset: Aura,
+    preset: AppPreset,
     options: {
       darkModeSelector: false,
     }
