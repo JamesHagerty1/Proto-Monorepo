@@ -34,7 +34,12 @@
 </script>
 
 <template>
-  <main class="max-w-md mx-auto p-6">
+  <main 
+    class="
+      min-h-screen overflow-y-auto flex flex-col justify-center max-w-md mx-auto 
+      px-6 py-8 pb-48
+    "
+  >
     <Form
       v-slot="$form"
       :initial-values="initialValues"
@@ -42,12 +47,18 @@
       @submit="onSubmit"
       class="space-y-4"
     >
-      <h1 class="text-3xl text-center mb-8">
-        Get started with Proto!
+      <img
+        src="/text-logo.png"
+        alt="Proto"
+        class="mb-10 h-24 w-auto mx-auto block"
+      />
+
+      <h1 class="text-[22px] font-medium">
+        Create your organization and account.
       </h1>
 
       <div>
-        <label for="organizationName">Organization Name</label>
+        <label for="organizationName">Organization name</label>
         <InputText id="organizationName" name="organizationName" fluid />
         <Message
           v-if="$form.organizationName?.invalid"
@@ -92,7 +103,7 @@
       </div>
 
       <div>
-        <label for="passwordConfirmation">Confirm Password</label>
+        <label for="passwordConfirmation">Confirm password</label>
         <Password
           id="passwordConfirmation"
           name="passwordConfirmation"
@@ -112,7 +123,7 @@
 
       <Button
         type="submit"
-        label="Create Organization & Account"
+        label="Create"
         fluid
       />
 
