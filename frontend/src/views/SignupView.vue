@@ -36,8 +36,7 @@
 <template>
   <main 
     class="
-      min-h-screen overflow-y-auto flex flex-col justify-center max-w-md mx-auto 
-      px-6 py-8 pb-48
+      min-h-screen flex flex-col justify-center max-w-md mx-auto px-6 pt-8 pb-56
     "
   >
     <Form
